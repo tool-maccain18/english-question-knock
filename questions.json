@@ -9,7 +9,14 @@
   { "q": "Would you like some tea?", "a": "Yes, please.", "tags": ["modal"], "hint": "丁寧な申し出。Yes, please が自然" },
   { "q": "How old is Leo?", "a": "He is ten.", "tags": ["wh","be"], "hint": "how old の答えは be動詞＋年齢" },
   { "q": "What time do you get up?", "a": "I get up at seven.", "tags": ["wh","do"], "hint": "時間表現 at seven" },
-
-  // …中略（残りは平易パターンのバリエーション/男女名入り/過去形/wh系/モーダル）
-  // リポジトリ内のファイルには100件分が入っています
+  { "q": "Where is the library?", "a": "It's near the park.", "tags": ["wh","be"], "hint": "場所の答え。It は the library を受ける" },
+  { "q": "Who is your teacher?", "a": "Mr. Brown is my teacher.", "tags": ["wh","be"], "hint": "肩書＋名前" },
+  { "q": "Why is Hana sad?", "a": "Because her cat is sick.", "tags": ["wh","be"], "hint": "why の答えは because〜 が自然" },
+  { "q": "When did you go to Kyoto?", "a": "I went last Sunday.", "tags": ["wh","past"], "hint": "過去の wh 質問。動詞は過去形" },
+  { "q": "Are Tom and Sara friends?", "a": "Yes, they are.", "tags": ["be"], "hint": "複数主語→ they" },
+  { "q": "Does Aoi have a bike?", "a": "Yes, she does.", "tags": ["do"], "hint": "have の三単現" },
+  { "q": "Can you help me?", "a": "Sure.", "tags": ["modal"], "hint": "依頼への自然な応答" },
+  { "q": "How many books do they have?", "a": "They have five.", "tags": ["wh","do"], "hint": "数の答え" },
+  { "q": "Was Ken busy yesterday?", "a": "No, he wasn't.", "tags": ["be","past"], "hint": "be動詞の過去形" },
+  { "q": "Were you at school?", "a": "Yes, I was.", "tags": ["be","past"], "hint": "you→過去形は were" }
 ]
