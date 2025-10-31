@@ -1,0 +1,15 @@
+[
+  { "q": "Are you ready?", "a": "Yes, I am.", "tags": ["be"], "hint": "be動詞（are）のYes/No応答" },
+  { "q": "Is Mika at home?", "a": "No, she isn't.", "tags": ["be"], "hint": "Mika=女性名。否定の短縮形 isn't" },
+  { "q": "Are they classmates?", "a": "Yes, they are.", "tags": ["be"], "hint": "they に対して are" },
+  { "q": "Do you like apples?", "a": "Yes, I do.", "tags": ["do"], "hint": "一般動詞のYes/No応答" },
+  { "q": "Does Ken play soccer?", "a": "No, he doesn't.", "tags": ["do"], "hint": "三人称単数 Does → 応答は doesn't" },
+  { "q": "Did they watch the movie?", "a": "Yes, they did.", "tags": ["do","past"], "hint": "過去の一般動詞の応答" },
+  { "q": "Can Yuki swim?", "a": "Yes, she can.", "tags": ["modal"], "hint": "can の可能" },
+  { "q": "Would you like some tea?", "a": "Yes, please.", "tags": ["modal"], "hint": "丁寧な申し出。Yes, please が自然" },
+  { "q": "How old is Leo?", "a": "He is ten.", "tags": ["wh","be"], "hint": "how old の答えは be動詞＋年齢" },
+  { "q": "What time do you get up?", "a": "I get up at seven.", "tags": ["wh","do"], "hint": "時間表現 at seven" },
+
+  // …中略（残りは平易パターンのバリエーション/男女名入り/過去形/wh系/モーダル）
+  // リポジトリ内のファイルには100件分が入っています
+]

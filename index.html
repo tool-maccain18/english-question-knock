@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>英語疑問文100本ノック</title>
+  <link rel="stylesheet" href="styles.css" />
+>英語疑問文100本ノック</h1>
+    <p class="sub">小学生向け：疑問文と答え方の練習（音声つき）</p>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="練習設定">
+      <div class="row">
+        <label>
+          <span>モード：</span>
+          <select id="mode">
+            <option value="all" selected>すべて</option>
+            <option value="be">be動詞</option>
+            <option value="do">do/does/did</option>
+            <option value="wh">wh・how</option>
+            <option value="modal">can / would など</option>
+            <option value="past">過去形</option>
+          </select>
+        </label>
+        <label>
+          <span>読み上げ：</span>
+          <select id="voiceSelect" aria-label="音声選択"></select>
+        </label>
+      </div>
+      <div class="row">
+        <button id="prevBtn" class="secondary" aria-label="前の問題">◀ 前へ</button>
+        <button id="nextBtn" class="secondary" aria-label="次の問題">次へ ▶</button>
+        <button id="shuffleBtn" class="secondary" aria-label="ランダム">🔀 ランダム</button>
+      </div>
+    </section>
+
+    <section id="card" class="card" aria-live="polite">
+      <div class="q-meta">
+        <span id="counter">-- / 100</span>
+        <span id="tags" class="tags"></span>
+      </div>
+      <p id="question" class="question">Loading…</p>
+
+      <div class="actions">
+        <button id="showAnswerBtn" class="primary">答えを見る</button>
+        <button id="playQuestionBtn" class="primary">Qを音声</button>
+        <button id="playAnswerBtn" class="primary" disabled>Aを音声</button>
+      </div>
+
+      <p id="answer" class="answer hidden" aria-hidden="true"></p>
+
+      <details class="hint">
+        <summary>ヒントを見る</summary>
+        <div id="hintText"></div>
+      </details>
+
+    </section>
+
+    <section class="footer-controls">
+      <button id="resetBtn" class="secondary">最初から</button>
+      <label class="small">
+        <input type="checkbox" id="autoPlay" />
+        <span>答え表示時に音声を自動再生</span>
+      </label>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 英語疑問文100本ノック | GitHubにそのまま保存して動作します（HTML/CSS/JS/JSONのみ）。</p>
+  </footer>
+
+  script.js</script>
+</body>
+</html>
+``
