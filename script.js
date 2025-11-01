@@ -27,11 +27,58 @@ const els = {
 };
 
 // Load questions.json
+// ★ loadQuestions を見える化＋キャッシュ回避＋フォールバック付きに差し替え
 async function loadQuestions() {
-  const res = await fetch('questions.json');
-  const data = await res.json();
-  state.questions = data;
-  applyFilter();
+  try {
+    // まずは questions.json を取りに行き、ダメなら questions_final.json も試す
+    const candidates = [
+      'questions.json?v=20251101a',      // キャッシュ回避クエリ付き
+      'questions_final.json?v=20251101a' // 予備：この名前で置いている場合
+    ];
+
+    let data = null, lastErr = null;
+
+    for (const url of candidates) {
+      try {
+        console.log('[loadQuestions] fetching:', url);
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+
+        const json = await res.json();
+        if (!Array.isArray(json)) {
+          throw new Error(`Non-array JSON from ${url}`);
+        }
+        if (json.length === 0) {
+          throw new Error(`Empty array from ${url}`);
+        }
+
+        console.log(`[loadQuestions] OK: loaded ${json.length} items from`, url);
+        data = json;
+        break; // 成功したので打ち切り
+      } catch (e) {
+        lastErr = e;
+        console.warn('[loadQuestions] Failed:', e.message);
+      }
+    }
+
+    if (!data) throw lastErr || new Error('No JSON loaded');
+
+    state.questions = data;
+  } catch (err) {
+    console.error('[loadQuestions] ERROR:', err);
+    // フェイルセーフ：1問だけ入れてUIが空にならないようにする
+    state.questions = [
+      { q: "Are you ready?", a: "Yes, I am.", tags: ["be","level-1"], hint: "準備はできていますか？→ はい、できています。" }
+    ];
+    alert(
+      "問題ファイルを読み込めませんでした。\n" +
+      "・ファイル名：'questions.json'（または 'questions_final.json'）で配置\n" +
+      "・GitHub Pagesの反映/キャッシュ（?v=の数字を更新）\n" +
+      "・JSONが配列＆コメント無し\n" +
+      "を確認してください。詳細は F12→Console/Network を参照。"
+    );
+  }
+  applyFilter(); // ← ここは従来どおり最後に呼びます
 }
 
 function applyFilter() {
@@ -160,4 +207,5 @@ if ('speechSynthesis' in window) {
 
 // Initialize
 loadQuestions();
+
 ``
