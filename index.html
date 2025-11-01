@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>英語疑問文100本ノック</title>
-
-  <!-- CSS を正しく読み込む -->
-  <link rel="stylesheet" href="styles.css" />
+  styles.css
 </head>
 <body>
   <header>
@@ -28,54 +26,67 @@
             <option value="past">過去形</option>
           </select>
         </label>
+
         <label>
           <span>読み上げ：</span>
           <select id="voiceSelect" aria-label="音声選択"></select>
         </label>
+
+        <label class="small">
+          <input type="checkbox" id="conversationMode" checked />
+          <span>会話モード（Q×2→A→表示）</span>
+        </label>
+
+        <label class="small">
+          <input type="checkbox" id="randomMode" checked />
+          <span>ランダム出題（既定）</span>
+        </label>
       </div>
+
       <div class="row">
         <button id="prevBtn" class="secondary" aria-label="前の問題">◀ 前へ</button>
         <button id="nextBtn" class="secondary" aria-label="次の問題">次へ ▶</button>
-        <button id="shuffleBtn" class="secondary" aria-label="ランダム">🔀 ランダム</button>
+        <button id="shuffleBtn" class="secondary" aria-label="ランダム">🔀 いまの範囲でランダム</button>
       </div>
     </section>
 
     <section id="card" class="card" aria-live="polite">
       <div class="q-meta">
-        <span id="counter">-- / 100</span>
+        <span id="counter">-- / --</span>
         <span id="tags" class="tags"></span>
       </div>
 
       <p id="question" class="question">Loading…</p>
 
-      <div class="actions">
-        <button id="showAnswerBtn" class="primary">答えを見る</button>
-        <button id="playQuestionBtn" class="primary">Qを音声</button>
-        <button id="playAnswerBtn" class="primary" disabled>Aを音声</button>
+      <!-- 会話の動線：Q→Q→（ヒント）→A→表示 -->
+      <div class="actions flow">
+        <button id="playQuestionX2Btn" class="primary">▶ Qを音声（×2）</button>
+        <button id="playQuestionBtn" class="secondary">▶ Qを音声（1回）</button>
       </div>
-
-      <p id="answer" class="answer hidden" aria-hidden="true"></p>
 
       <details class="hint">
         <summary>ヒントを見る</summary>
         <div id="hintText"></div>
       </details>
+
+      <div class="actions flow">
+        <button id="playAnswerBtn" class="primary">▶ Aを音声</button>
+        <button id="showAnswerBtn" class="secondary">答えを見る</button>
+      </div>
+
+      <p id="answer" class="answer hidden" aria-hidden="true"></p>
     </section>
 
     <section class="footer-controls">
       <button id="resetBtn" class="secondary">最初から</button>
-      <label class="small">
-        <input type="checkbox" id="autoPlay" />
-        <span>答え表示時に音声を自動再生</span>
-      </label>
     </section>
   </main>
 
   <footer>
-    <p>© 英語疑問文100本ノック | GitHubにそのまま保存して動作します（HTML/CSS/JS/JSONのみ）。</p>
+    <p>© 英語疑問文100本ノック | GitHub Pagesで動作（HTML/CSS/JS/JSONのみ）。</p>
   </footer>
 
-  <!-- JS を正しく読み込む -->
-  <script src="script.js"></script>
+  script.js</script>
 </body>
 </html>
+``
