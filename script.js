@@ -26,59 +26,54 @@ const els = {
   hintText: document.getElementById('hintText')
 };
 
-// Load questions.json
-// ★ loadQuestions を見える化＋キャッシュ回避＋フォールバック付きに差し替え
+// ★ 詳細エラーを表示するデバッグ版
 async function loadQuestions() {
   try {
-    // まずは questions.json を取りに行き、ダメなら questions_final.json も試す
     const candidates = [
-      'questions.json?v=20251101a',      // キャッシュ回避クエリ付き
-      'questions_final.json?v=20251101a' // 予備：この名前で置いている場合
+      'questions.json?v=20251101b',      // ← クエリ文字を1文字変えてキャッシュ確実回避
+      'questions_final.json?v=20251101b'
     ];
 
-    let data = null, lastErr = null;
+    let data = null;
+    let logs = [];      // 追加：試行ログをためる
+    let lastErr = null;
 
     for (const url of candidates) {
       try {
-        console.log('[loadQuestions] fetching:', url);
         const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-
+        if (!res.ok) throw new Error(`HTTP ${res.status} (${res.statusText}) for ${url}`);
         const json = await res.json();
-        if (!Array.isArray(json)) {
-          throw new Error(`Non-array JSON from ${url}`);
-        }
-        if (json.length === 0) {
-          throw new Error(`Empty array from ${url}`);
-        }
-
-        console.log(`[loadQuestions] OK: loaded ${json.length} items from`, url);
+        if (!Array.isArray(json)) throw new Error(`Non-array JSON from ${url}`);
+        if (json.length === 0) throw new Error(`Empty array from ${url}`);
         data = json;
-        break; // 成功したので打ち切り
+        logs.push(`OK: ${json.length} items from ${url}`);
+        break;
       } catch (e) {
         lastErr = e;
-        console.warn('[loadQuestions] Failed:', e.message);
+        logs.push(`NG: ${e.message}`);
       }
     }
 
-    if (!data) throw lastErr || new Error('No JSON loaded');
+    if (!data) throw new Error(logs.join('\n'));
 
+    console.log('[loadQuestions] ' + logs.join(' | '));
     state.questions = data;
   } catch (err) {
     console.error('[loadQuestions] ERROR:', err);
-    // フェイルセーフ：1問だけ入れてUIが空にならないようにする
     state.questions = [
       { q: "Are you ready?", a: "Yes, I am.", tags: ["be","level-1"], hint: "準備はできていますか？→ はい、できています。" }
     ];
     alert(
-      "問題ファイルを読み込めませんでした。\n" +
+      "問題ファイルを読み込めませんでした。\n--- 詳細 ---\n" +
+      String(err.message) +
+      "\n---------------\n" +
       "・ファイル名：'questions.json'（または 'questions_final.json'）で配置\n" +
       "・GitHub Pagesの反映/キャッシュ（?v=の数字を更新）\n" +
       "・JSONが配列＆コメント無し\n" +
-      "を確認してください。詳細は F12→Console/Network を参照。"
+      "を確認してください。F12→Console/Network も参照。"
     );
   }
-  applyFilter(); // ← ここは従来どおり最後に呼びます
+  applyFilter();
 }
 
 function applyFilter() {
@@ -209,3 +204,4 @@ if ('speechSynthesis' in window) {
 loadQuestions();
 
 ``
+
