@@ -1,11 +1,13 @@
-// 英語疑問文100本ノック - クライアントのみで動作
-// 機能：問題読み込み、タグフィルタ、音声合成、前後移動、ランダム
+// 英語疑問文100本ノック - 会話モード & ランダム出題対応版
 
 const state = {
   questions: [],
   filtered: [],
   index: 0,
   voice: null,
+  conversationMode: true,   // 既定ON：Q×2→A→表示
+  randomMode: true,         // 既定ON：次へでランダム
+  history: []               // ランダム時の戻る用
 };
 
 const els = {
@@ -14,11 +16,16 @@ const els = {
   prevBtn: document.getElementById('prevBtn'),
   nextBtn: document.getElementById('nextBtn'),
   shuffleBtn: document.getElementById('shuffleBtn'),
-  showAnswerBtn: document.getElementById('showAnswerBtn'),
+
+  conversationMode: document.getElementById('conversationMode'),
+  randomMode: document.getElementById('randomMode'),
+
+  playQuestionX2Btn: document.getElementById('playQuestionX2Btn'),
   playQuestionBtn: document.getElementById('playQuestionBtn'),
   playAnswerBtn: document.getElementById('playAnswerBtn'),
+  showAnswerBtn: document.getElementById('showAnswerBtn'),
   resetBtn: document.getElementById('resetBtn'),
-  autoPlay: document.getElementById('autoPlay'),
+
   counter: document.getElementById('counter'),
   tags: document.getElementById('tags'),
   question: document.getElementById('question'),
@@ -26,182 +33,234 @@ const els = {
   hintText: document.getElementById('hintText')
 };
 
-// ★ 詳細エラーを表示するデバッグ版
+// ---------- 音声合成ユーティリティ ----------
+function getPreferredVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return (
+    voices.find(v => /Sonia/i.test(v.name)) ||
+    voices.find(v => /en-GB/i.test(v.lang)) ||
+    voices.find(v => /en_US|en-US/i.test(v.lang)) ||
+    voices[0] || null
+  );
+}
+
+// Promiseで完了を待てる speak
+function speakAsync(text, opts = {}) {
+  return new Promise((resolve) => {
+    const utter = new SpeechSynthesisUtterance(text);
+    if (!state.voice) state.voice = getPreferredVoice();
+    if (state.voice) utter.voice = state.voice;
+    utter.rate = opts.rate ?? 0.95;
+    utter.pitch = opts.pitch ?? 1.0;
+    utter.onend = () => resolve();
+    // 先行再生を止める
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
+  });
+}
+
+async function speakQuestionTwice() {
+  const text = els.question.textContent;
+  if (!text || text === 'Loading…') return;
+  await speakAsync(text);
+  // 少し間を空ける
+  await new Promise(r => setTimeout(r, 350));
+  await speakAsync(text);
+}
+
+// ---------- データ読み込み ----------
 async function loadQuestions() {
   try {
     const candidates = [
-      'questions.json?v=20251101b',      // ← クエリ文字を1文字変えてキャッシュ確実回避
-      'questions_final.json?v=20251101b'
+      'questions.json?v=conv1',
+      'questions_120.json?v=conv1' // 予備：拡張版を使うとき
     ];
-
-    let data = null;
-    let logs = [];      // 追加：試行ログをためる
-    let lastErr = null;
-
+    let data = null, lastErr = null;
     for (const url of candidates) {
       try {
         const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`HTTP ${res.status} (${res.statusText}) for ${url}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
-        if (!Array.isArray(json)) throw new Error(`Non-array JSON from ${url}`);
-        if (json.length === 0) throw new Error(`Empty array from ${url}`);
+        if (!Array.isArray(json) || json.length === 0) throw new Error('Invalid JSON');
         data = json;
-        logs.push(`OK: ${json.length} items from ${url}`);
         break;
       } catch (e) {
         lastErr = e;
-        logs.push(`NG: ${e.message}`);
       }
     }
-
-    if (!data) throw new Error(logs.join('\n'));
-
-    console.log('[loadQuestions] ' + logs.join(' | '));
+    if (!data) throw lastErr || new Error('No JSON');
     state.questions = data;
+    applyFilter(true); // 初回はランダムに
   } catch (err) {
-    console.error('[loadQuestions] ERROR:', err);
+    console.error('loadQuestions error:', err);
+    // フェイルセーフ
     state.questions = [
       { q: "Are you ready?", a: "Yes, I am.", tags: ["be","level-1"], hint: "準備はできていますか？→ はい、できています。" }
     ];
-    alert(
-      "問題ファイルを読み込めませんでした。\n--- 詳細 ---\n" +
-      String(err.message) +
-      "\n---------------\n" +
-      "・ファイル名：'questions.json'（または 'questions_final.json'）で配置\n" +
-      "・GitHub Pagesの反映/キャッシュ（?v=の数字を更新）\n" +
-      "・JSONが配列＆コメント無し\n" +
-      "を確認してください。F12→Console/Network も参照。"
-    );
+    applyFilter(true);
   }
-  applyFilter();
 }
 
-function applyFilter() {
+function applyFilter(isInitial = false) {
   const mode = els.mode.value;
   state.filtered = state.questions.filter(q => {
     if (mode === 'all') return true;
     return q.tags && q.tags.includes(mode);
   });
-  state.index = 0;
-  render();
+
+  // ランダム出題：初回/フィルタ変更時にランダムから始める
+  if (state.randomMode && state.filtered.length > 0) {
+    state.index = Math.floor(Math.random() * state.filtered.length);
+    state.history = [];
+  } else {
+    state.index = 0;
+    state.history = [];
+  }
+  render(isInitial);
 }
 
-function render() {
+// ---------- 表示と自動再生 ----------
+let renderTimer = null;
+
+function render(isInitial = false) {
+  if (renderTimer) clearTimeout(renderTimer);
+
   if (state.filtered.length === 0) {
     els.question.textContent = '該当する問題がありません。モードを変更してください。';
     els.answer.classList.add('hidden');
     els.answer.setAttribute('aria-hidden', 'true');
     els.counter.textContent = '0 / 0';
     els.tags.innerHTML = '';
-    els.playAnswerBtn.disabled = true;
     return;
   }
+
   const q = state.filtered[state.index];
   els.question.textContent = q.q;
   els.answer.textContent = q.a;
   els.hintText.textContent = q.hint || '';
   els.answer.classList.add('hidden');
   els.answer.setAttribute('aria-hidden', 'true');
-  els.playAnswerBtn.disabled = true;
+
   els.counter.textContent = `${state.index + 1} / ${state.filtered.length}`;
   els.tags.innerHTML = (q.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
-}
 
-function speak(text, opts = {}) {
-  const utter = new SpeechSynthesisUtterance(text);
-  // 既知のユーザー好み：UK英語 Sonia を優先（存在しない場合は en-GB → en-US の順にフォールバック）
-  const voices = window.speechSynthesis.getVoices();
-  let voice = state.voice;
-  if (!voice) {
-    voice = (
-      voices.find(v => /Sonia/i.test(v.name)) ||
-      voices.find(v => /en-GB/i.test(v.lang)) ||
-      voices.find(v => /en_US|en-US/i.test(v.lang)) ||
-      voices[0]
-    );
-  }
-  if (voice) utter.voice = voice;
-  utter.rate = opts.rate ?? 0.95; // 少し遅め
-  utter.pitch = opts.pitch ?? 1.0;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utter);
-}
-
-function populateVoices() {
-  const voices = window.speechSynthesis.getVoices();
-  // 表示用に UK → US → others の順に並べる
-  const sorted = voices.sort((a, b) => {
-    const rank = lang => (lang.startsWith('en-GB') ? 0 : lang.startsWith('en-US') ? 1 : 2);
-    const ra = rank(a.lang || '');
-    const rb = rank(b.lang || '');
-    if (ra !== rb) return ra - rb;
-    return (a.name || '').localeCompare(b.name || '');
-  });
-  els.voiceSelect.innerHTML = sorted.map(v => `<option value="${v.name}">${v.name} (${v.lang})</option>`).join('');
-  // 既定選択：Sonia → en-GB → en-US
-  const preferred = sorted.find(v => /Sonia/i.test(v.name)) || sorted.find(v => /en-GB/i.test(v.lang)) || sorted.find(v => /en-US/i.test(v.lang)) || sorted[0];
-  if (preferred) {
-    els.voiceSelect.value = preferred.name;
-    state.voice = preferred;
+  // 初回やカード切替時に会話モードならQ×2を自動再生
+  if (state.conversationMode) {
+    // paint後に実行
+    renderTimer = setTimeout(async () => {
+      await speakQuestionTwice();
+    }, 150);
   }
 }
 
-// Event bindings
-els.mode.addEventListener('change', applyFilter);
-
-els.prevBtn.addEventListener('click', () => {
+// ---------- ナビゲーション ----------
+function goPrev() {
   if (state.filtered.length === 0) return;
-  state.index = (state.index - 1 + state.filtered.length) % state.filtered.length;
+  if (state.randomMode && state.history.length > 0) {
+    const prevIndex = state.history.pop();
+    state.index = prevIndex;
+  } else {
+    state.index = (state.index - 1 + state.filtered.length) % state.filtered.length;
+  }
   render();
+}
+
+function goNext() {
+  if (state.filtered.length === 0) return;
+  if (state.randomMode) {
+    state.history.push(state.index);
+    let next = state.index;
+    if (state.filtered.length > 1) {
+      while (next === state.index) next = Math.floor(Math.random() * state.filtered.length);
+    }
+    state.index = next;
+  } else {
+    state.index = (state.index + 1) % state.filtered.length;
+  }
+  render();
+}
+
+// ---------- イベント ----------
+els.mode.addEventListener('change', () => applyFilter());
+els.randomMode.addEventListener('change', () => {
+  state.randomMode = els.randomMode.checked;
+});
+els.conversationMode.addEventListener('change', () => {
+  state.conversationMode = els.conversationMode.checked;
 });
 
-els.nextBtn.addEventListener('click', () => {
-  if (state.filtered.length === 0) return;
-  state.index = (state.index + 1) % state.filtered.length;
-  render();
-});
-
+els.prevBtn.addEventListener('click', goPrev);
+els.nextBtn.addEventListener('click', goNext);
 els.shuffleBtn.addEventListener('click', () => {
   if (state.filtered.length === 0) return;
   state.index = Math.floor(Math.random() * state.filtered.length);
   render();
 });
 
-els.showAnswerBtn.addEventListener('click', () => {
+// Q×2 / Q×1 再生ボタン
+els.playQuestionX2Btn.addEventListener('click', async () => {
+  await speakQuestionTwice();
+});
+els.playQuestionBtn.addEventListener('click', async () => {
+  const text = els.question.textContent;
+  if (!text || text === 'Loading…') return;
+  await speakAsync(text);
+});
+
+// Aを音声 →（会話モード時）終わってから表示
+els.playAnswerBtn.addEventListener('click', async () => {
+  const text = els.answer.textContent;
+  if (!text) return;
+  await speakAsync(text);
+  if (state.conversationMode) {
+    els.answer.classList.remove('hidden');
+    els.answer.setAttribute('aria-hidden', 'false');
+  }
+});
+
+// 「答えを見る」：会話モードなら A→表示、OFFなら即表示＋任意で音声
+els.showAnswerBtn.addEventListener('click', async () => {
+  const text = els.answer.textContent;
+  if (state.conversationMode && text) {
+    await speakAsync(text);
+  }
   els.answer.classList.remove('hidden');
   els.answer.setAttribute('aria-hidden', 'false');
-  els.playAnswerBtn.disabled = false;
-  if (els.autoPlay.checked) speak(els.answer.textContent);
-});
-
-els.playQuestionBtn.addEventListener('click', () => {
-  speak(els.question.textContent);
-});
-
-els.playAnswerBtn.addEventListener('click', () => {
-  speak(els.answer.textContent);
 });
 
 els.resetBtn.addEventListener('click', () => {
-  state.index = 0;
-  render();
+  state.history = [];
+  applyFilter(true);
 });
 
-// voice selection
+// 音声選択
+function populateVoices() {
+  const voices = window.speechSynthesis.getVoices();
+  // UK → US → others
+  const sorted = voices.sort((a, b) => {
+    const rank = lang => (String(lang).startsWith('en-GB') ? 0 : String(lang).startsWith('en-US') ? 1 : 2);
+    const ra = rank(a.lang), rb = rank(b.lang);
+    if (ra !== rb) return ra - rb;
+    return (a.name || '').localeCompare(b.name || '');
+  });
+  els.voiceSelect.innerHTML = sorted.map(v => `<option value="${v.name}">${v.name} (${v.lang})</option>`).join('');
+  const preferred = sorted.find(v => /Sonia/i.test(v.name)) || sorted.find(v => /en-GB/i.test(v.lang)) || sorted.find(v => /en-US/i.test(v.lang)) || sorted[0];
+  if (preferred) {
+    els.voiceSelect.value = preferred.name;
+    state.voice = preferred;
+  }
+}
 els.voiceSelect.addEventListener('change', () => {
   const name = els.voiceSelect.value;
   const v = window.speechSynthesis.getVoices().find(x => x.name === name);
   state.voice = v || null;
 });
 
-// iOS/Safariなどで voices が遅延ロードされる対策
+// iOS/Safari対策
 if ('speechSynthesis' in window) {
   window.speechSynthesis.onvoiceschanged = () => populateVoices();
   populateVoices();
 }
 
-// Initialize
+// 初期化
 loadQuestions();
-
-``
-
