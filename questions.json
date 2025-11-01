@@ -1,118 +1,1067 @@
 [
-  { "q": "Is Ken a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Kenは学生ですか？→ はい、彼です。" },
-  { "q": "Is Haru a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Haruは学生ですか？→ はい、彼です。" },
-  { "q": "Is Tom a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Tomは学生ですか？→ はい、彼です。" },
-  { "q": "Is Leo a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Leoは学生ですか？→ はい、彼です。" },
-  { "q": "Is Kai a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Kaiは学生ですか？→ はい、彼です。" },
-  { "q": "Is Noah a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Noahは学生ですか？→ はい、彼です。" },
-  { "q": "Is Evan a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Evanは学生ですか？→ はい、彼です。" },
-  { "q": "Is Riku a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Rikuは学生ですか？→ はい、彼です。" },
-  { "q": "Is Taro a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Taroは学生ですか？→ はい、彼です。" },
-  { "q": "Is Ben a student?", "a": "Yes, he is.", "tags": ["be","level-1"], "hint": "Benは学生ですか？→ はい、彼です。" },
-
-  { "q": "Is Hana a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Hanaは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Aoi a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Aoiは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Yuki a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Yukiは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Mika a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Mikaは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Sara a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Saraは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Emma a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Emmaは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Lily a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Lilyは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Mia a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Miaは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Ava a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Avaは学生ですか？→ はい、彼女です。" },
-  { "q": "Is Sofia a student?", "a": "Yes, she is.", "tags": ["be","level-1"], "hint": "Sofiaは学生ですか？→ はい、彼女です。" },
-
-  { "q": "Are they friends?", "a": "Yes, they are.", "tags": ["be","level-1"], "hint": "彼らは友だちですか？→ はい、そうです。" },
-  { "q": "Are you ready?", "a": "Yes, I am.", "tags": ["be","level-1"], "hint": "準備はできていますか？→ はい、できています。" },
-
-  { "q": "Does Ken play soccer?", "a": "No, he doesn't.", "tags": ["do","level-1"], "hint": "ケンはサッカーをしますか？→ いいえ、しません。" },
-  { "q": "Does Haru play soccer?", "a": "No, he doesn't.", "tags": ["do","level-1"], "hint": "ハルはサッカーをしますか？→ いいえ、しません。" },
-  { "q": "Does Tom play soccer?", "a": "No, he doesn't.", "tags": ["do","level-1"], "hint": "トムはサッカーをしますか？→ いいえ、しません。" },
-  { "q": "Does Leo play soccer?", "a": "No, he doesn't.", "tags": ["do","level-1"], "hint": "レオはサッカーをしますか？→ いいえ、しません。" },
-  { "q": "Does Kai play soccer?", "a": "No, he doesn't.", "tags": ["do","level-1"], "hint": "カイはサッカーをしますか？→ いいえ、しません。" },
-
-  { "q": "Does Hana like music?", "a": "Yes, she does.", "tags": ["do","level-1"], "hint": "ハナは音楽が好きですか？→ はい、好きです。" },
-  { "q": "Does Aoi like music?", "a": "Yes, she does.", "tags": ["do","level-1"], "hint": "アオイは音楽が好きですか？→ はい、好きです。" },
-  { "q": "Does Yuki like music?", "a": "Yes, she does.", "tags": ["do","level-1"], "hint": "ユキは音楽が好きですか？→ はい、好きです。" },
-  { "q": "Does Mika like music?", "a": "Yes, she does.", "tags": ["do","level-1"], "hint": "ミカは音楽が好きですか？→ はい、好きです。" },
-  { "q": "Does Sara like music?", "a": "Yes, she does.", "tags": ["do","level-1"], "hint": "サラは音楽が好きですか？→ はい、好きです。" },
-
-  { "q": "Do you like apples?", "a": "Yes, I do.", "tags": ["do","level-1"], "hint": "りんごは好きですか？→ はい、好きです。" },
-  { "q": "Do they have lunch now?", "a": "Yes, they do.", "tags": ["do","level-1"], "hint": "彼らはいま昼食ですか？→ はい、そうです。" },
-  { "q": "Do we have lunch now?", "a": "Yes, we do.", "tags": ["do","level-1"], "hint": "私たちはいま昼食ですか？→ はい、そうです。" },
-  { "q": "Do you have lunch now?", "a": "Yes, I do.", "tags": ["do","level-1"], "hint": "あなたはいま昼食ですか？→ はい、そうです。" },
-
-  { "q": "Can you help me?", "a": "Sure.", "tags": ["modal","level-1"], "hint": "手伝ってくれますか？→ もちろん。" },
-  { "q": "Can Ken ride a bike?", "a": "Yes, he can.", "tags": ["modal","level-1"], "hint": "ケンは自転車に乗れますか？→ はい。" },
-  { "q": "Can Haru ride a bike?", "a": "Yes, he can.", "tags": ["modal","level-1"], "hint": "ハルは自転車に乗れますか？→ はい。" },
-  { "q": "Can Tom ride a bike?", "a": "Yes, he can.", "tags": ["modal","level-1"], "hint": "トムは自転車に乗れますか？→ はい。" },
-  { "q": "Can Leo ride a bike?", "a": "Yes, he can.", "tags": ["modal","level-1"], "hint": "レオは自転車に乗れますか？→ はい。" },
-  { "q": "Can Kai ride a bike?", "a": "Yes, he can.", "tags": ["modal","level-1"], "hint": "カイは自転車に乗れますか？→ はい。" },
-
-  { "q": "Can Hana draw well?", "a": "No, she can't.", "tags": ["modal","level-1"], "hint": "ハナは上手に絵が描けますか？→ いいえ。" },
-  { "q": "Can Aoi draw well?", "a": "No, she can't.", "tags": ["modal","level-1"], "hint": "アオイは上手に絵が描けますか？→ いいえ。" },
-  { "q": "Can Yuki draw well?", "a": "No, she can't.", "tags": ["modal","level-1"], "hint": "ユキは上手に絵が描けますか？→ いいえ。" },
-  { "q": "Can Mika draw well?", "a": "No, she can't.", "tags": ["modal","level-1"], "hint": "ミカは上手に絵が描けますか？→ いいえ。" },
-  { "q": "Can Sara draw well?", "a": "No, she can't.", "tags": ["modal","level-1"], "hint": "サラは上手に絵が描けますか？→ いいえ。" },
-
-  { "q": "Would you like some tea?", "a": "Yes, please.", "tags": ["modal","level-1"], "hint": "お茶はいかがですか？→ はい、お願いします。" },
-
-  { "q": "How old is Leo?", "a": "He is ten.", "tags": ["wh","be","level-1"], "hint": "レオは何歳？→ 10歳です。" },
-  { "q": "Where is the library?", "a": "It's near the park.", "tags": ["wh","be","level-1"], "hint": "図書館はどこ？→ 公園の近くです。" },
-  { "q": "What time do you get up?", "a": "I get up at seven.", "tags": ["wh","do","level-1"], "hint": "何時に起きますか？→ 7時です。" },
-  { "q": "How many books do they have?", "a": "They have five.", "tags": ["wh","do","level-1"], "hint": "何冊持っていますか？→ 5冊。" },
-  { "q": "Who is your teacher?", "a": "Mr. Brown is my teacher.", "tags": ["wh","be","level-1"], "hint": "先生はだれ？→ ブラウン先生です。" },
-
-  { "q": "Was Ken busy yesterday?", "a": "No, he wasn't.", "tags": ["be","past","level-1"], "hint": "ケンは昨日忙しかった？→ いいえ。" },
-  { "q": "Were you at school?", "a": "Yes, I was.", "tags": ["be","past","level-1"], "hint": "あなたは学校にいましたか？→ はい。" },
-
-  { "q": "Did you go to Osaka?", "a": "I went last Sunday.", "tags": ["wh","past","level-2"], "hint": "大阪へ行きましたか？→ 先週日曜に行きました。／ポイント：不規則動詞の過去形を確認。" },
-  { "q": "Did they see the movie?", "a": "They saw it yesterday.", "tags": ["wh","past","level-2"], "hint": "彼らは映画を見ましたか？→ 昨日見ました。／ポイント：不規則動詞。" },
-  { "q": "Did Ken have breakfast?", "a": "Yes, he had toast.", "tags": ["wh","past","level-2"], "hint": "ケンは朝食を食べましたか？→ はい、トースト。／ポイント：had。" },
-  { "q": "Did Mia eat lunch at school?", "a": "Yes, she ate lunch at school.", "tags": ["wh","past","level-2"], "hint": "ミアは学校で昼食？→ はい、食べました。／ポイント：ate。" },
-  { "q": "Did Tom make a cake?", "a": "Yes, he made a cake.", "tags": ["wh","past","level-2"], "hint": "トムはケーキを作った？→ はい。／ポイント：made。" },
-  { "q": "Did Yuki come to the party?", "a": "No, she didn't come.", "tags": ["wh","past","level-2"], "hint": "ユキはパーティーに来た？→ いいえ。／ポイント：came/come。" },
-  { "q": "Did they get a new dog?", "a": "Yes, they got one.", "tags": ["wh","past","level-2"], "hint": "新しい犬を迎えた？→ はい。／ポイント：got。" },
-  { "q": "Did Haru take a photo?", "a": "He took a photo.", "tags": ["wh","past","level-2"], "hint": "ハルは写真を撮った？→ 撮りました。／ポイント：took。" },
-  { "q": "Did Ava give you a letter?", "a": "Yes, she gave me one.", "tags": ["wh","past","level-2"], "hint": "アヴァは手紙をくれた？→ はい。／ポイント：gave。" },
-  { "q": "Did Leo read the book?", "a": "He read it last night.", "tags": ["wh","past","level-2"], "hint": "レオは本を読んだ？→ 昨夜。／ポイント：read(過去形発音)。" },
-  { "q": "Did Sara write a message?", "a": "She wrote a message.", "tags": ["wh","past","level-2"], "hint": "サラはメッセージを書いた？→ 書きました。／ポイント：wrote。" },
-  { "q": "Did Ken buy new shoes?", "a": "Yes, he bought new shoes.", "tags": ["wh","past","level-2"], "hint": "ケンは新しい靴？→ はい。／ポイント：bought。" },
-  { "q": "Did Lily bring her notebook?", "a": "Yes, she brought it.", "tags": ["wh","past","level-2"], "hint": "リリーはノート？→ はい。／ポイント：brought。" },
-  { "q": "Did Tom tell you the answer?", "a": "Yes, he told me.", "tags": ["wh","past","level-2"], "hint": "トムは答えを教えた？→ はい。／ポイント：told。" },
-  { "q": "Did Noah say hello?", "a": "Yes, he said hello.", "tags": ["wh","past","level-2"], "hint": "ノアは挨拶した？→ はい。／ポイント：said。" },
-  { "q": "Did Mr. Brown teach math?", "a": "Yes, he taught math.", "tags": ["wh","past","level-2"], "hint": "ブラウン先生は算数？→ はい。／ポイント：taught。" },
-  { "q": "Did they find the key?", "a": "They found the key.", "tags": ["wh","past","level-2"], "hint": "鍵を見つけた？→ 見つけました。／ポイント：found。" },
-  { "q": "Did you think about it?", "a": "Yes, I thought about it.", "tags": ["wh","past","level-2"], "hint": "それについて考えた？→ はい。／ポイント：thought。" },
-  { "q": "Did Aoi feel tired?", "a": "Yes, she felt tired.", "tags": ["wh","past","level-2"], "hint": "アオイは疲れを感じた？→ はい。／ポイント：felt。" },
-  { "q": "Did Riku sleep well?", "a": "Yes, he slept well.", "tags": ["wh","past","level-2"], "hint": "リクはよく眠れた？→ はい。／ポイント：slept。" },
-  { "q": "Did Sara drink milk?", "a": "Yes, she drank milk.", "tags": ["wh","past","level-2"], "hint": "サラは牛乳を飲んだ？→ はい。／ポイント：drank。" },
-  { "q": "Did Leo swim fast?", "a": "Yes, he swam fast.", "tags": ["wh","past","level-2"], "hint": "レオは速く泳いだ？→ はい。／ポイント：swam。" },
-  { "q": "Did Ken run to school?", "a": "Yes, he ran to school.", "tags": ["wh","past","level-2"], "hint": "ケンは学校まで走った？→ はい。／ポイント：ran。" },
-  { "q": "Did they meet their teacher?", "a": "Yes, they met their teacher.", "tags": ["wh","past","level-2"], "hint": "先生に会った？→ はい。／ポイント：met。" },
-
-  { "q": "Why did they run?", "a": "Because it was rainy.", "tags": ["wh","past","level-2"], "hint": "なぜ走りましたか？→ 雨だったから。／ポイント：理由の because。" },
-  { "q": "When did you go to Kyoto?", "a": "I went last Sunday.", "tags": ["wh","past","level-2"], "hint": "いつ京都へ行きましたか？→ 先週日曜。／ポイント：時の表現。" },
-  { "q": "Were they at the park?", "a": "Yes, they were.", "tags": ["be","past","level-2"], "hint": "彼らは公園にいましたか？→ はい。／ポイント：beの過去形。" },
-
-  { "q": "Do they usually eat breakfast together before school on weekdays?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "平日に登校前にふだん一緒に朝食を食べますか？／ポイント：長めでも応答はシンプル。" },
-  { "q": "Does Mika often play basketball with friends after club activities?", "a": "Yes, she does.", "tags": ["do","level-3"], "hint": "ミカは部活後に友だちとバスケ？／ポイント：頻度副詞。" },
-  { "q": "Do you normally finish your homework before dinner at home?", "a": "Yes, I do.", "tags": ["do","level-3"], "hint": "家で夕食前に宿題を終えますか？／ポイント：語順。" },
-  { "q": "Did Ken sometimes read comics in the library after classes?", "a": "Yes, he did.", "tags": ["past","level-3"], "hint": "ケンは授業後に図書館で漫画？／ポイント：過去の頻度。" },
-  { "q": "Can Yuki really swim fifty meters without stopping in the pool?", "a": "Yes, she can.", "tags": ["modal","level-3"], "hint": "ユキは止まらずに50m泳げますか？／ポイント：canの可能。" },
-  { "q": "Would Tom like to join the science club this semester?", "a": "Yes, he would.", "tags": ["modal","level-3"], "hint": "トムは今学期サイエンスクラブに入りたい？／ポイント：wouldの意向。" },
-  { "q": "Do they usually clean the classroom together after the last class?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "最終授業後に教室を掃除？／ポイント：副詞句。" },
-  { "q": "Does Aoi often practice the piano at home before bedtime?", "a": "Yes, she does.", "tags": ["do","level-3"], "hint": "アオイは寝る前にピアノ練習？／ポイント：時を表す語句。" },
-  { "q": "Did Leo sometimes go to the park with his cousin on Sundays?", "a": "Yes, he did.", "tags": ["past","level-3"], "hint": "レオはいとこと日曜に公園？／ポイント：過去＋頻度＋曜日。" },
-  { "q": "Do we usually have club meetings every Friday after school?", "a": "Yes, we do.", "tags": ["do","level-3"], "hint": "毎週金曜放課後にクラブの集まり？／ポイント：複合句。" },
-  { "q": "Does the school often hold assembly in the gym on Monday mornings?", "a": "Yes, it does.", "tags": ["do","level-3"], "hint": "学校は月曜朝に体育館で朝礼？／ポイント：主語がit。" },
-  { "q": "Did the team sometimes practice outside even when it was a little rainy?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "小雨でも外で練習？／ポイント：従属節。" },
-  { "q": "Do teachers usually check the homework carefully before starting the new lesson?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "新しい授業前に宿題確認？／ポイント：不定詞句。" },
-  { "q": "Does Ken usually bring his water bottle to club practice after school?", "a": "Yes, he does.", "tags": ["do","level-3"], "hint": "ケンは部活に水筒？／ポイント：目的語＋前置詞句。" },
-  { "q": "Do Emma and Ken usually study English together after dinner at home?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "エマとケンは夕食後に英語勉強？／ポイント：複数主語。" },
-  { "q": "Did Sara and Tom often visit the museum during the summer holiday last year?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "昨年夏休み中に博物館へよく行った？／ポイント：過去＋時表現。" },
-  { "q": "Does Mr. Brown sometimes give extra homework to the class on Mondays?", "a": "Yes, he does.", "tags": ["do","level-3"], "hint": "月曜に宿題追加？／ポイント：三単現＋前置詞句。" },
-  { "q": "Do parents usually prepare lunch for children on busy weekday mornings?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "平日の忙しい朝に昼食を用意？／ポイント：形容詞句。" },
-  { "q": "Did Noah and Lily sometimes practice soccer together after school last autumn?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "昨秋放課後に一緒にサッカー練習？／ポイント：過去＋季節。" }
-
+  {
+    "q": "Is Ken a student?",
+    "a": "Yes, he is.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "Kenは学生ですか？→ はい、彼です。"
+  },
+  {
+    "q": "Is Haru a student?",
+    "a": "Yes, he is.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "Haruは学生ですか？→ はい、彼です。"
+  },
+  {
+    "q": "Is Tom a student?",
+    "a": "Yes, he is.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "Tomは学生ですか？→ はい、彼です。"
+  },
+  {
+    "q": "Is Leo a student?",
+    "a": "Yes, he is.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "Leoは学生ですか？→ はい、彼です。"
+  },
+  {
+    "q": "Is Kai a student?",
+    "a": "Yes, he is.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "Kaiは学生ですか？→ はい、彼です。"
+  },
+  {
+    "q": "Are they friends?",
+    "a": "Yes, they are.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "彼らは友だちですか？→ はい、そうです。"
+  },
+  {
+    "q": "Are you ready?",
+    "a": "Yes, I am.",
+    "tags": [
+      "be",
+      "level-1"
+    ],
+    "hint": "準備はできていますか？→ はい、できています。"
+  },
+  {
+    "q": "Does Ken play soccer?",
+    "a": "No, he doesn't.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "ケンはサッカーをしますか？→ いいえ、しません。"
+  },
+  {
+    "q": "Does Haru play soccer?",
+    "a": "No, he doesn't.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "ハルはサッカーをしますか？→ いいえ、しません。"
+  },
+  {
+    "q": "Does Tom play soccer?",
+    "a": "No, he doesn't.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "トムはサッカーをしますか？→ いいえ、しません。"
+  },
+  {
+    "q": "Does Hana like music?",
+    "a": "Yes, she does.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "ハナは音楽が好きですか？→ はい、好きです。"
+  },
+  {
+    "q": "Does Aoi like music?",
+    "a": "Yes, she does.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "アオイは音楽が好きですか？→ はい、好きです。"
+  },
+  {
+    "q": "Does Yuki like music?",
+    "a": "Yes, she does.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "ユキは音楽が好きですか？→ はい、好きです。"
+  },
+  {
+    "q": "Do you like apples?",
+    "a": "Yes, I do.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "りんごは好きですか？→ はい、好きです。"
+  },
+  {
+    "q": "Do they have lunch now?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "彼らはいま昼食ですか？→ はい、そうです。"
+  },
+  {
+    "q": "Do we have lunch now?",
+    "a": "Yes, we do.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "私たちはいま昼食ですか？→ はい、そうです。"
+  },
+  {
+    "q": "Do you have lunch now?",
+    "a": "Yes, I do.",
+    "tags": [
+      "do",
+      "level-1"
+    ],
+    "hint": "あなたはいま昼食ですか？→ はい、そうです。"
+  },
+  {
+    "q": "Can you help me?",
+    "a": "Sure.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "手伝ってくれますか？→ もちろん。"
+  },
+  {
+    "q": "Can Ken ride a bike?",
+    "a": "Yes, he can.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "ケンは自転車に乗れますか？→ はい。"
+  },
+  {
+    "q": "Can Haru ride a bike?",
+    "a": "Yes, he can.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "ハルは自転車に乗れますか？→ はい。"
+  },
+  {
+    "q": "Can Tom ride a bike?",
+    "a": "Yes, he can.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "トムは自転車に乗れますか？→ はい。"
+  },
+  {
+    "q": "Can Hana draw well?",
+    "a": "No, she can't.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "ハナは上手に絵が描けますか？→ いいえ。"
+  },
+  {
+    "q": "Can Aoi draw well?",
+    "a": "No, she can't.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "アオイは上手に絵が描けますか？→ いいえ。"
+  },
+  {
+    "q": "Can Yuki draw well?",
+    "a": "No, she can't.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "ユキは上手に絵が描けますか？→ いいえ。"
+  },
+  {
+    "q": "Would you like some tea?",
+    "a": "Yes, please.",
+    "tags": [
+      "modal",
+      "level-1"
+    ],
+    "hint": "お茶はいかがですか？→ はい、お願いします。"
+  },
+  {
+    "q": "How old is Leo?",
+    "a": "He is ten.",
+    "tags": [
+      "wh",
+      "be",
+      "level-1"
+    ],
+    "hint": "レオは何歳？→ 10歳です。"
+  },
+  {
+    "q": "Where is the library?",
+    "a": "It's near the park.",
+    "tags": [
+      "wh",
+      "be",
+      "level-1"
+    ],
+    "hint": "図書館はどこ？→ 公園の近くです。"
+  },
+  {
+    "q": "What time do you get up?",
+    "a": "I get up at seven.",
+    "tags": [
+      "wh",
+      "do",
+      "level-1"
+    ],
+    "hint": "何時に起きますか？→ 7時です。"
+  },
+  {
+    "q": "How many books do they have?",
+    "a": "They have five.",
+    "tags": [
+      "wh",
+      "do",
+      "level-1"
+    ],
+    "hint": "何冊持っていますか？→ 5冊。"
+  },
+  {
+    "q": "Who is your teacher?",
+    "a": "Mr. Brown is my teacher.",
+    "tags": [
+      "wh",
+      "be",
+      "level-1"
+    ],
+    "hint": "先生はだれ？→ ブラウン先生です。"
+  },
+  {
+    "q": "Was Ken busy yesterday?",
+    "a": "No, he wasn't.",
+    "tags": [
+      "be",
+      "past",
+      "level-1"
+    ],
+    "hint": "ケンは昨日忙しかった？→ いいえ。"
+  },
+  {
+    "q": "Were you at school?",
+    "a": "Yes, I was.",
+    "tags": [
+      "be",
+      "past",
+      "level-1"
+    ],
+    "hint": "あなたは学校にいましたか？→ はい。"
+  },
+  {
+    "q": "Did you go to Osaka?",
+    "a": "I went last Sunday.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "大阪へ行きましたか？→ 先週日曜に行きました。／ポイント：不規則動詞の過去形を確認。"
+  },
+  {
+    "q": "Did they see the movie?",
+    "a": "They saw it yesterday.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "彼らは映画を見ましたか？→ 昨日見ました。／ポイント：不規則動詞。"
+  },
+  {
+    "q": "Did Ken have breakfast?",
+    "a": "Yes, he had toast.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ケンは朝食を食べましたか？→ はい、トースト。／ポイント：had。"
+  },
+  {
+    "q": "Did Mia eat lunch at school?",
+    "a": "Yes, she ate lunch at school.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ミアは学校で昼食？→ はい、食べました。／ポイント：ate。"
+  },
+  {
+    "q": "Did Tom make a cake?",
+    "a": "Yes, he made a cake.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "トムはケーキを作った？→ はい。／ポイント：made。"
+  },
+  {
+    "q": "Did Yuki come to the party?",
+    "a": "No, she didn't come.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ユキはパーティーに来た？→ いいえ。／ポイント：came/come。"
+  },
+  {
+    "q": "Did they get a new dog?",
+    "a": "Yes, they got one.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "新しい犬を迎えた？→ はい。／ポイント：got。"
+  },
+  {
+    "q": "Did Haru take a photo?",
+    "a": "He took a photo.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ハルは写真を撮った？→ 撮りました。／ポイント：took。"
+  },
+  {
+    "q": "Did Ava give you a letter?",
+    "a": "Yes, she gave me one.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "アヴァは手紙をくれた？→ はい。／ポイント：gave。"
+  },
+  {
+    "q": "Did Leo read the book?",
+    "a": "He read it last night.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "レオは本を読んだ？→ 昨夜。／ポイント：read(過去形発音)。"
+  },
+  {
+    "q": "Did Sara write a message?",
+    "a": "She wrote a message.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "サラはメッセージを書いた？→ 書きました。／ポイント：wrote。"
+  },
+  {
+    "q": "Did Ken buy new shoes?",
+    "a": "Yes, he bought new shoes.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ケンは新しい靴？→ はい。／ポイント：bought。"
+  },
+  {
+    "q": "Did Lily bring her notebook?",
+    "a": "Yes, she brought it.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "リリーはノート？→ はい。／ポイント：brought。"
+  },
+  {
+    "q": "Did Tom tell you the answer?",
+    "a": "Yes, he told me.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "トムは答えを教えた？→ はい。／ポイント：told。"
+  },
+  {
+    "q": "Did Noah say hello?",
+    "a": "Yes, he said hello.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ノアは挨拶した？→ はい。／ポイント：said。"
+  },
+  {
+    "q": "Did Mr. Brown teach math?",
+    "a": "Yes, he taught math.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ブラウン先生は算数？→ はい。／ポイント：taught。"
+  },
+  {
+    "q": "Did they find the key?",
+    "a": "They found the key.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "鍵を見つけた？→ 見つけました。／ポイント：found。"
+  },
+  {
+    "q": "Did you think about it?",
+    "a": "Yes, I thought about it.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "それについて考えた？→ はい。／ポイント：thought。"
+  },
+  {
+    "q": "Did Aoi feel tired?",
+    "a": "Yes, she felt tired.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "アオイは疲れを感じた？→ はい。／ポイント：felt。"
+  },
+  {
+    "q": "Did Riku sleep well?",
+    "a": "Yes, he slept well.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "リクはよく眠れた？→ はい。／ポイント：slept。"
+  },
+  {
+    "q": "Did Sara drink milk?",
+    "a": "Yes, she drank milk.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "サラは牛乳を飲んだ？→ はい。／ポイント：drank。"
+  },
+  {
+    "q": "Did Leo swim fast?",
+    "a": "Yes, he swam fast.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "レオは速く泳いだ？→ はい。／ポイント：swam。"
+  },
+  {
+    "q": "Did Ken run to school?",
+    "a": "Yes, he ran to school.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ケンは学校まで走った？→ はい。／ポイント：ran。"
+  },
+  {
+    "q": "Did they meet their teacher?",
+    "a": "Yes, they met their teacher.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "先生に会った？→ はい。／ポイント：met。"
+  },
+  {
+    "q": "Why did they run?",
+    "a": "Because it was rainy.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "なぜ走りましたか？→ 雨だったから。／ポイント：理由の because。"
+  },
+  {
+    "q": "When did you go to Kyoto?",
+    "a": "I went last Sunday.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "いつ京都へ行きましたか？→ 先週日曜。／ポイント：時の表現。"
+  },
+  {
+    "q": "Were they at the park?",
+    "a": "Yes, they were.",
+    "tags": [
+      "be",
+      "past",
+      "level-2"
+    ],
+    "hint": "彼らは公園にいましたか？→ はい。／ポイント：beの過去形。"
+  },
+  {
+    "q": "Do they usually eat breakfast together before school on weekdays?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "平日に登校前にふだん一緒に朝食を食べますか？／ポイント：長めでも応答はシンプル。"
+  },
+  {
+    "q": "Does Mika often play basketball with friends after club activities?",
+    "a": "Yes, she does.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "ミカは部活後に友だちとバスケ？／ポイント：頻度副詞。"
+  },
+  {
+    "q": "Do you normally finish your homework before dinner at home?",
+    "a": "Yes, I do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "家で夕食前に宿題を終えますか？／ポイント：語順。"
+  },
+  {
+    "q": "Did Ken sometimes read comics in the library after classes?",
+    "a": "Yes, he did.",
+    "tags": [
+      "past",
+      "level-3"
+    ],
+    "hint": "ケンは授業後に図書館で漫画？／ポイント：過去の頻度。"
+  },
+  {
+    "q": "Can Yuki really swim fifty meters without stopping in the pool?",
+    "a": "Yes, she can.",
+    "tags": [
+      "modal",
+      "level-3"
+    ],
+    "hint": "ユキは止まらずに50m泳げますか？／ポイント：canの可能。"
+  },
+  {
+    "q": "Would Tom like to join the science club this semester?",
+    "a": "Yes, he would.",
+    "tags": [
+      "modal",
+      "level-3"
+    ],
+    "hint": "トムは今学期サイエンスクラブに入りたい？／ポイント：wouldの意向。"
+  },
+  {
+    "q": "Do they usually clean the classroom together after the last class?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "最終授業後に教室を掃除？／ポイント：副詞句。"
+  },
+  {
+    "q": "Does Aoi often practice the piano at home before bedtime?",
+    "a": "Yes, she does.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "アオイは寝る前にピアノ練習？／ポイント：時を表す語句。"
+  },
+  {
+    "q": "Did Leo sometimes go to the park with his cousin on Sundays?",
+    "a": "Yes, he did.",
+    "tags": [
+      "past",
+      "level-3"
+    ],
+    "hint": "レオはいとこと日曜に公園？／ポイント：過去＋頻度＋曜日。"
+  },
+  {
+    "q": "Do we usually have club meetings every Friday after school?",
+    "a": "Yes, we do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "毎週金曜放課後にクラブの集まり？／ポイント：複合句。"
+  },
+  {
+    "q": "Does the school often hold assembly in the gym on Monday mornings?",
+    "a": "Yes, it does.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "学校は月曜朝に体育館で朝礼？／ポイント：主語がit。"
+  },
+  {
+    "q": "Did the team sometimes practice outside even when it was a little rainy?",
+    "a": "Yes, they did.",
+    "tags": [
+      "past",
+      "level-3"
+    ],
+    "hint": "小雨でも外で練習？／ポイント：従属節。"
+  },
+  {
+    "q": "Do teachers usually check the homework carefully before starting the new lesson?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "新しい授業前に宿題確認？／ポイント：不定詞句。"
+  },
+  {
+    "q": "Does Ken usually bring his water bottle to club practice after school?",
+    "a": "Yes, he does.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "ケンは部活に水筒？／ポイント：目的語＋前置詞句。"
+  },
+  {
+    "q": "Do Emma and Ken usually study English together after dinner at home?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "エマとケンは夕食後に英語勉強？／ポイント：複数主語。"
+  },
+  {
+    "q": "Did Sara and Tom often visit the museum during the summer holiday last year?",
+    "a": "Yes, they did.",
+    "tags": [
+      "past",
+      "level-3"
+    ],
+    "hint": "昨年夏休み中に博物館へよく行った？／ポイント：過去＋時表現。"
+  },
+  {
+    "q": "Does Mr. Brown sometimes give extra homework to the class on Mondays?",
+    "a": "Yes, he does.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "月曜に宿題追加？／ポイント：三単現＋前置詞句。"
+  },
+  {
+    "q": "Do parents usually prepare lunch for children on busy weekday mornings?",
+    "a": "Yes, they do.",
+    "tags": [
+      "do",
+      "level-3"
+    ],
+    "hint": "平日の忙しい朝に昼食を用意？／ポイント：形容詞句。"
+  },
+  {
+    "q": "Did Noah and Lily sometimes practice soccer together after school last autumn?",
+    "a": "Yes, they did.",
+    "tags": [
+      "past",
+      "level-3"
+    ],
+    "hint": "昨秋放課後に一緒にサッカー練習？／ポイント：過去＋季節。"
+  },
+  {
+    "q": "What did Ken leave at school?",
+    "a": "He left his textbook.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ケンは学校に何を忘れましたか？→ 教科書を置き忘れました。"
+  },
+  {
+    "q": "What did Hana keep in her bag?",
+    "a": "She kept a diary.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ハナはカバンに何を入れていましたか？→ 日記です。"
+  },
+  {
+    "q": "What did Tom lose yesterday?",
+    "a": "He lost his key.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "トムは昨日何をなくしましたか？→ 鍵です。"
+  },
+  {
+    "q": "What did the shop sell at a discount?",
+    "a": "It sold pens.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "店は何を値引き販売しましたか？→ ペンです。"
+  },
+  {
+    "q": "What did Mr. Brown lend to you?",
+    "a": "He lent me a book.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ブラウン先生はあなたに何を貸しましたか？→ 本です。"
+  },
+  {
+    "q": "What did Aoi send to Mika?",
+    "a": "She sent a photo.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "アオイはミカに何を送りましたか？→ 写真です。"
+  },
+  {
+    "q": "What did Leo catch in the park?",
+    "a": "He caught a ball.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "レオは公園で何を捕まえましたか？→ ボールです。"
+  },
+  {
+    "q": "What did they choose for lunch?",
+    "a": "They chose curry.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "彼らは昼食に何を選びましたか？→ カレーです。"
+  },
+  {
+    "q": "What did Yuki draw in art class?",
+    "a": "She drew a cat.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ユキは美術の授業で何を描きましたか？→ 猫です。"
+  },
+  {
+    "q": "What did Ken sit on at the station?",
+    "a": "He sat on a bench.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ケンは駅で何に座りましたか？→ ベンチです。"
+  },
+  {
+    "q": "Where did Sara stand during the concert?",
+    "a": "She stood near the door.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "サラはコンサート中どこに立っていましたか？→ ドアの近くです。"
+  },
+  {
+    "q": "What language did Mr. Brown speak at the event?",
+    "a": "He spoke English.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ブラウン先生はイベントで何語を話しましたか？→ 英語です。"
+  },
+  {
+    "q": "What did Haru pay for at the store?",
+    "a": "He paid for milk.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "ハルは店で何の代金を払いましたか？→ 牛乳です。"
+  },
+  {
+    "q": "What did Tom ride to school?",
+    "a": "He rode his bike.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "トムは学校へ何に乗って行きましたか？→ 自転車です。"
+  },
+  {
+    "q": "What time does the library open on weekdays?",
+    "a": "It opens at nine.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "図書館は平日何時に開きますか？→ 9時に開きます。"
+  },
+  {
+    "q": "What time do you usually start your homework?",
+    "a": "I start at seven.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "普段何時に宿題を始めますか？→ 7時です。"
+  },
+  {
+    "q": "When is the club meeting this week?",
+    "a": "It is on Friday.",
+    "tags": [
+      "wh",
+      "be",
+      "level-2"
+    ],
+    "hint": "今週のクラブの集まりはいつですか？→ 金曜日です。"
+  },
+  {
+    "q": "What did you buy at the supermarket?",
+    "a": "I bought some fruit.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "スーパーで何を買いましたか？→ 果物を買いました。"
+  },
+  {
+    "q": "How much is this sandwich?",
+    "a": "It is four hundred yen.",
+    "tags": [
+      "wh",
+      "level-2"
+    ],
+    "hint": "このサンドイッチはいくらですか？→ 400円です。"
+  },
+  {
+    "q": "What would you like to order?",
+    "a": "I would like a small salad.",
+    "tags": [
+      "wh",
+      "modal",
+      "level-2"
+    ],
+    "hint": "何を注文しますか？→ 小さいサラダをお願いします。"
+  },
+  {
+    "q": "How do you get to school on rainy days?",
+    "a": "I go by bus.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "雨の日はどうやって学校へ行きますか？→ バスで行きます。"
+  },
+  {
+    "q": "When does the train leave for Tokyo?",
+    "a": "It leaves at eight fifteen.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "東京行きの電車はいつ出発しますか？→ 8時15分です。"
+  },
+  {
+    "q": "What time does Ken arrive home after practice?",
+    "a": "He arrives at seven thirty.",
+    "tags": [
+      "wh",
+      "do",
+      "level-3"
+    ],
+    "hint": "ケンは練習後何時に家に着きますか？→ 7時30分です。"
+  },
+  {
+    "q": "What are you going to do after dinner?",
+    "a": "I am going to read.",
+    "tags": [
+      "wh",
+      "be",
+      "level-2"
+    ],
+    "hint": "夕食後に何をする予定ですか？→ 読書をします。"
+  },
+  {
+    "q": "How are you feeling today?",
+    "a": "I am a little tired.",
+    "tags": [
+      "wh",
+      "be",
+      "level-2"
+    ],
+    "hint": "今日はどんな気分ですか？→ 少し疲れています。"
+  },
+  {
+    "q": "What is the weather like tomorrow morning?",
+    "a": "It will be cloudy.",
+    "tags": [
+      "wh",
+      "modal",
+      "level-3"
+    ],
+    "hint": "明日の朝の天気はどうですか？→ 曇りの予定です。"
+  },
+  {
+    "q": "What is your favorite book?",
+    "a": "My favorite book is Harry Potter.",
+    "tags": [
+      "wh",
+      "be",
+      "level-2"
+    ],
+    "hint": "好きな本は何ですか？→ ハリー・ポッターです。"
+  },
+  {
+    "q": "How often do you play video games?",
+    "a": "I play once a week.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "どのくらいの頻度でゲームをしますか？→ 週に1回です。"
+  },
+  {
+    "q": "What did you do during the summer vacation?",
+    "a": "I visited my grandparents.",
+    "tags": [
+      "wh",
+      "past",
+      "level-2"
+    ],
+    "hint": "夏休みに何をしましたか？→ 祖父母を訪ねました。"
+  },
+  {
+    "q": "What time do they usually start cleaning the classroom after the last class?",
+    "a": "They start at four thirty.",
+    "tags": [
+      "wh",
+      "do",
+      "level-3"
+    ],
+    "hint": "彼らは最終授業の後いつ教室の掃除を始めますか？→ 4時30分です。"
+  },
+  {
+    "q": "When did Sara and Tom last visit the museum during the spring holiday?",
+    "a": "They visited last April.",
+    "tags": [
+      "wh",
+      "past",
+      "level-3"
+    ],
+    "hint": "春休みにサラとトムが最後に博物館へ行ったのはいつですか？→ 4月です。"
+  },
+  {
+    "q": "What time do you have lunch at school?",
+    "a": "I have lunch at twelve.",
+    "tags": [
+      "wh",
+      "do",
+      "level-1"
+    ],
+    "hint": "学校で昼食は何時ですか？→ 12時です。"
+  },
+  {
+    "q": "What time do you have lunch at school on Fridays?",
+    "a": "I have lunch at twelve.",
+    "tags": [
+      "wh",
+      "do",
+      "level-2"
+    ],
+    "hint": "学校で金曜日の昼食は何時ですか？→ 12時です。"
+  }
 ]
-
