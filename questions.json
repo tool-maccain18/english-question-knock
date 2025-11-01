@@ -112,6 +112,7 @@
   { "q": "Did Sara and Tom often visit the museum during the summer holiday last year?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "昨年夏休み中に博物館へよく行った？／ポイント：過去＋時表現。" },
   { "q": "Does Mr. Brown sometimes give extra homework to the class on Mondays?", "a": "Yes, he does.", "tags": ["do","level-3"], "hint": "月曜に宿題追加？／ポイント：三単現＋前置詞句。" },
   { "q": "Do parents usually prepare lunch for children on busy weekday mornings?", "a": "Yes, they do.", "tags": ["do","level-3"], "hint": "平日の忙しい朝に昼食を用意？／ポイント：形容詞句。" },
-  { "q": "Did Noah and Lily sometimes practice soccer together after school last autumn?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "昨秋放課後に一緒にサッカー練習？／ポイント：過去＋季節。" },
+  { "q": "Did Noah and Lily sometimes practice soccer together after school last autumn?", "a": "Yes, they did.", "tags": ["past","level-3"], "hint": "昨秋放課後に一緒にサッカー練習？／ポイント：過去＋季節。" }
 
 ]
+
