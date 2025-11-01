@@ -37,4 +37,23 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .footer-controls { margin-top: 14px; display: flex; gap: 12px; align-items: center; }
 .small { font-size: .95rem; color: var(--muted); }
 footer { text-align: center; padding: 20px; color: var(--muted); }
+/* 会話の動線を強調 */
+.actions.flow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.actions.flow .primary {
+  min-width: 180px;
+}
+.hint summary {
+  cursor: pointer;
+  user-select: none;
+}
+.small {
+  font-size: .95rem;
+  color: var(--muted);
+}
+``
 ``
